@@ -1,0 +1,71 @@
+server:
+  port: 8088 # tomcat端口号
+  servlet:
+    context-path: /springboot # 项目根路径
+
+spring:
+#  datasource:
+#    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+#    username: oms
+#    password: pass
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+  datasource:
+    username: root
+    password: 111111
+    url: jdbc:mysql://localhost:13306/testMysql?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+#  thymeleaf:
+#    prefix: classpath:/templates/
+
+  redis:
+    database: 0
+    # Redis服务器地址
+    host: 172.17.0.3
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password:
+    # 连接池最大连接数（使用负值表示没有限制）
+    pool:
+    max-active: 8
+    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    max-wait: -1
+    # 连接池中的最大空闲连接
+    max-idle: 8
+    # 连接池中的最小空闲连接
+    min-idle: 0
+
+  kafka:
+    bootstrap-servers: 172.18.0.3:9092
+
+    producer:
+
+    consumer:
+
+
+
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.demo6.mysql
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+
+
+
+
